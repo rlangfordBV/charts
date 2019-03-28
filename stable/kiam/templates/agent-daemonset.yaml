@@ -85,7 +85,7 @@ spec:
             - --cert=/etc/kiam/tls/{{ .Values.agent.tlsCerts.certFileName }}
             - --key=/etc/kiam/tls/{{ .Values.agent.tlsCerts.keyFileName }}
             - --ca=/etc/kiam/tls/{{ .Values.agent.tlsCerts.caFileName }}
-            - --server-address={{ template "kiam.fullname" . }}-server:{{ .Values.server.service.port }}
+            - --server-address=localhost:{{ .Values.server.service.port }}
             {{- if .Values.agent.prometheus.scrape }}
             - --prometheus-listen-addr=0.0.0.0:{{ .Values.agent.prometheus.port }}
             - --prometheus-sync-interval={{ .Values.agent.prometheus.syncInterval }}
